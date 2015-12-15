@@ -1,0 +1,26 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  host: localhost
+  port: 5432
+
+development:
+  <<: *default
+  database: limama_dev
+  username: imidsac
+  password: <%= ENV['PASSWORD'] %>
+
+
+production:
+  <<: *default
+  database: limama_pro
+  username: imidsac
+  password: <%= ENV['PASSWORD'] %>
+
+
+test:
+  <<: *default
+  database: limama_test
+  username: imidsac
+  password: <%= ENV['PASSWORD'] %>
